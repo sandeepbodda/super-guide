@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Sandeep Bodda | Computational Neuroscience, EEG &amp; BCI</title>
+<meta name="description" content="Dr. Sandeep Bodda, Assistant Professor and Research Scientist at the Amrita Mind Brain Center. EEG signal processing, brain-computer interfaces, functional connectivity, and meditation and yoga neuroscience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F7F9; --ink:#14213D; --muted:#55627A; --line:#D5DBE4;
+  --teal:#1B6B73; --crimson:#B5123E; --panel:#FFFFFF;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#0F1726;--ink:#E8EDF5;--muted:#9AA8BF;--line:#26324A;--teal:#5FC0C9;--crimson:#F06A8D;--panel:#16213A}
+}
+:root[data-theme="dark"]{--paper:#0F1726;--ink:#E8EDF5;--muted:#9AA8BF;--line:#26324A;--teal:#5FC0C9;--crimson:#F06A8D;--panel:#16213A}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--serif)}
+a{color:var(--teal);text-underline-offset:3px}
+a:hover{color:var(--crimson)}
+:focus-visible{outline:2px solid var(--crimson);outline-offset:3px;border-radius:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.5rem}
+.brand{font:600 .95rem var(--sans);color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;font:500 .9rem var(--sans)}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--crimson)}
+@media(max-width:620px){nav ul{gap:.8rem;font-size:.8rem}.brand{display:none}}
+
+/* hero */
+.hero{padding:4.5rem 0 0;position:relative;overflow:hidden}
+.hero h1{font:600 clamp(2.6rem,7vw,4.6rem)/1.02 var(--serif);letter-spacing:-.02em;margin:0 0 1rem}
+.hero .role{font:500 1.05rem/1.5 var(--sans);color:var(--muted);max-width:40rem;margin:0}
+.hero .role b{color:var(--ink);font-weight:600}
+.trace{display:block;width:100%;height:11rem;margin-top:2.5rem}
+.trace path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.trace .c1{stroke:var(--teal);stroke-width:1.6}
+.trace .c2{stroke:var(--crimson);stroke-width:1.2;opacity:.75}
+.trace .c3{stroke:var(--muted);stroke-width:1;opacity:.5}
+
+/* sections */
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h2{font:600 1.7rem/1.2 var(--serif);margin:0 0 1.5rem;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:13rem 1fr;gap:2rem}
+@media(max-width:760px){.grid{grid-template-columns:1fr;gap:.5rem}}
+.grid>h2{margin:0}
+p{margin:0 0 1rem;max-width:42rem}
+
+.areas{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:1.5rem}
+.area{border-left:3px solid var(--teal);padding:.2rem 0 .2rem 1rem}
+.area:nth-child(2){border-color:var(--crimson)}
+.area:nth-child(3){border-color:var(--muted)}
+.area h3{font:600 1.1rem var(--serif);margin:0 0 .3rem}
+.area p{font-size:.98rem;color:var(--muted);margin:0}
+
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1rem 0 0}
+.tags li{font:500 .82rem var(--sans);border:1px solid var(--line);background:var(--panel);padding:.25rem .7rem;border-radius:99px}
+
+dl.teach{margin:0;display:grid;grid-template-columns:1fr;gap:.9rem}
+dl.teach div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:.7rem}
+dl.teach dt{font-weight:600}
+dl.teach dd{margin:0;font:400 .9rem var(--sans);color:var(--muted);text-align:right}
+
+/* publications */
+.pubs h3{font:600 .95rem var(--sans);color:var(--teal);margin:2rem 0 .8rem}
+.pubs h3:first-child{margin-top:0}
+.pubs ol{list-style:none;margin:0;padding:0}
+.pubs li{display:grid;grid-template-columns:3.2rem 1fr;gap:.5rem;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.98rem;line-height:1.55}
+.pubs .yr{font:600 .85rem var(--sans);color:var(--crimson);padding-top:.15rem}
+.pubs em{color:var(--muted)}
+.pubs strong{font-weight:600;background:linear-gradient(transparent 62%,color-mix(in srgb,var(--teal) 22%,transparent) 0)}
+details.more summary{cursor:pointer;font:500 .9rem var(--sans);color:var(--teal);margin:.6rem 0}
+details.more[open] summary{margin-bottom:0}
+
+/* contact */
+.links{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;list-style:none;margin:0;padding:0;font:500 .98rem var(--sans)}
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font:400 .85rem var(--sans);color:var(--muted)}
+button.theme{font:500 .8rem var(--sans);background:none;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:.25rem .7rem;cursor:pointer}
+button.theme:hover{color:var(--crimson);border-color:var(--crimson)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Sandeep Bodda</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="theme" id="theme" type="button" aria-label="Toggle colour theme">Theme</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1>Dr. Sandeep Bodda</h1>
+    <p class="role"><b>Assistant Professor and Research Scientist</b> at the Amrita Mind Brain Center, Amrita Vishwa Vidyapeetham, Amritapuri, Kerala, India. I lead the <b>Multimodal Imaging &amp; Neural Dynamics (MIND) Lab</b>.</p>
+  </div>
+  <svg class="trace" id="trace" viewBox="0 0 1200 176" preserveAspectRatio="none" role="img" aria-label="Decorative EEG traces">
+    <path class="c3" id="t3"/><path class="c2" id="t2"/><path class="c1" id="t1"/>
+  </svg>
+</div>
+
+<section id="about"><div class="wrap grid">
+  <h2>About</h2>
+  <div>
+    <p>I earned my Ph.D. in Computational Neuroscience from the Faculty of Sciences at Amrita Vishwa Vidyapeetham. My thesis, supervised by Dr. Shyam Diwakar, decoded hand-grasp movement from electroencephalography (EEG).</p>
+    <p>My work asks how regions of the human brain synchronise and communicate while a person moves, meditates, or holds something in mind. I use EEG to record that activity in real time and functional connectivity measures to describe the networks behind it.</p>
+    <p>My doctoral work was supported by the DST Cognitive Science Research Initiative.</p>
+  </div>
+</div></section>
+
+<section id="research"><div class="wrap">
+  <h2>Research</h2>
+  <p>Functional brain networks during movement, yoga and meditation, and cognition.</p>
+  <div class="areas">
+    <div class="area"><h3>Movement control and BCI</h3><p>How cortical areas coordinate to plan and execute hand-grasp movements, and how those signatures can drive brain-computer interfaces.</p></div>
+    <div class="area"><h3>Yoga and meditation neuroscience</h3><p>How yoga and meditation practice, including Trataka, change functional connectivity and brain dynamics before and after practice.</p></div>
+    <div class="area"><h3>Cognition: working memory, attention, stress</h3><p>Network interactions underlying working memory load, sustained attention, and the response to stress.</p></div>
+  </div>
+  <ul class="tags" aria-label="Methods and topics">
+    <li>EEG signal processing</li><li>Brain-computer interfaces</li><li>Computational neuroscience</li>
+    <li>Microstate analysis</li><li>Functional connectivity</li><li>Meditation and yoga neuroscience</li>
+  </ul>
+</div></section>
+
+<section id="teaching"><div class="wrap grid">
+  <h2>Teaching</h2>
+  <dl class="teach">
+    <div><dt>Brain-Computer Interfaces</dt><dd>MTech</dd></div>
+    <div><dt>Nature-Inspired Engineering</dt><dd>BTech</dd></div>
+    <div><dt>Neurophysiology and Neuroimaging</dt><dd>MSc Cognitive Science</dd></div>
+  </dl>
+</div></section>
+
+<section id="publications"><div class="wrap grid pubs">
+  <h2>Publications</h2>
+  <div>
+    <h3>Journal articles</h3>
+    <ol>
+      <li><span class="yr">2025</span><span><strong>Bodda S</strong>, Diwakar S. Interconnections and global transitions among functional states encode activity-related dynamics as brain topology changes after yoga training. <em>Sci Rep</em> 15, 16845. <a href="https://doi.org/10.1038/s41598-025-00134-y">doi:10.1038/s41598-025-00134-y</a></span></li>
+      <li><span class="yr">2022</span><span><strong>Bodda S</strong>, Diwakar S. Exploring EEG spectral and temporal dynamics underlying a hand grasp movement. <em>PLOS ONE</em> 17(6): e0270366. <a href="https://doi.org/10.1371/journal.pone.0270366">doi:10.1371/journal.pone.0270366</a></span></li>
+      <li><span class="yr">2017</span><span>Rajendran AG, Nutakki C, Sasidharakurup H, <strong>Bodda S</strong>, Nair B, Diwakar S. Cerebellum in neurological disorders: a review on the role of inter-connected neural circuits. <em>J Neurol Stroke</em> 6(2): 00196. <a href="https://doi.org/10.15406/jnsk.2017.06.00196">doi:10.15406/jnsk.2017.06.00196</a></span></li>
+    </ol>
+
+    <h3>Book chapters</h3>
+    <ol>
+      <li><span class="yr">2019</span><span>Nutakki C, <strong>Bodda S</strong>, Diwakar S. Correlations of gait phase kinematics and cortical EEG: modelling human gait with data from sensors. <em>Advances in Neural Signal Processing</em>, IntechOpen. <a href="https://doi.org/10.5772/intechopen.88465">doi:10.5772/intechopen.88465</a></span></li>
+      <li><span class="yr">2017</span><span>Diwakar S, Nutakki C, <strong>Bodda S</strong>, Rajendran A, Vijayan A, Nair B. Mathematical modeling of cerebellar granular layer neurons and network activity: information estimation, population behaviour and robotic abstractions. In: Naldi G, Nieus T (eds), <em>Mathematical and Theoretical Neuroscience</em>, Springer INdAM series, vol. 24. <a href="https://doi.org/10.1007/978-3-319-68297-6">doi:10.1007/978-3-319-68297-6</a></span></li>
+    </ol>
+
+    <h3>Conference papers</h3>
+    <details class="more" open>
+      <summary>Show or hide all conference papers</summary>
+      <ol>
+        <li><span class="yr">2021</span><span><strong>Bodda S</strong>. Decoding hand grasped movement when used as BMI from EEG electrodes: revealing use of gamma oscillations. <em>2nd International Brain Computer Interface Un-Conference</em>, University of Vienna, 10-11 Feb.</span></li>
+        <li><span class="yr">2020</span><span>Kumar D, Puthanveedu AC, Mohan K, Priya LA, Rajeev A, Harisudhan AC, Vijayan A, <strong>Bodda S</strong>, Diwakar S. Signal processing in yoga-related neural circuits and implications of stretching and sitting asana on brain function. <em>2nd Intl. Conf. on Cybernetics, Cognition and Machine Learning Applications</em>, Goa, 29-30 Aug.</span></li>
+        <li><span class="yr">2019</span><span><strong>Bodda S</strong>, Maya S, Potti MNEM, Sohan U, Bhuvaneshwari Y, Mathiyoth R, Diwakar S. Computational analysis of EEG activity during stance and swing gait phases. <em>CoCoNet'19</em>, Trivandrum, 18-21 Dec.</span></li>
+        <li><span class="yr">2019</span><span>Santosh A, Sangilirajan M, Nizar N, Radhamani R, Kumar D, <strong>Bodda S</strong>, Diwakar S. Computational exploration of neural dynamics underlying music cues among trained and amateur subjects. <em>CoCoNet'19</em>, Trivandrum, 18-21 Dec.</span></li>
+        <li><span class="yr">2018</span><span>Balachandran A, Nutakki C, <strong>Bodda S</strong>, Nair B, Diwakar S. Experimental recording and assessing gait phases using mobile phone sensors and EEG. <em>ICACCI 2018</em>, Bangalore, 19-22 Sept.</span></li>
+        <li><span class="yr">2017</span><span><strong>Bodda S</strong>, Palathingal RK, Shankar V, Nair B, Diwakar S. Modeling population network activity using LFPsim, spiking neurons and neural mass models. <em>ICACCI 2017</em>, Manipal, 13-16 Sept.</span></li>
+        <li><span class="yr">2016</span><span><strong>Bodda S</strong>, Nair B, Diwakar S. Mathematical modelling of post synaptic evoked local field potential using neural mass model. <em>XXXIV Annual Meeting, Indian Academy of Neurosciences</em>, NBRC Manesar, 19-21 Oct.</span></li>
+        <li><span class="yr">2016</span><span><strong>Bodda S</strong>, Parasuram H, Nair B, Diwakar S. Computing LFP from biophysical models of neurons and neural microcircuits. <em>ICACCI 2016</em>, Jaipur, 21-24 Sept.</span></li>
+        <li><span class="yr">2016</span><span>Chellaiah P, <strong>Bodda S</strong>, Lal R, Madhu C, Zamare V, Nair B, Achuthan K, Diwakar S. EEG-based assessment of image sequence-based user authentication in computer network security. <em>ICEEOT 2016</em>, Chennai, 3-5 Mar.</span></li>
+        <li><span class="yr">2016</span><span><strong>Bodda S</strong>, Chandranpillai H, Viswam P, Krishna S, Nair B, Diwakar S. Categorizing imagined right and left motor imagery BCI tasks for low-cost robotic neuroprosthesis. <em>ICEEOT 2016</em>, Chennai, 3-5 Mar.</span></li>
+        <li><span class="yr">2015</span><span><strong>Bodda S</strong>, Nair B, Diwakar S. EEG-based assessment and categorisation for imagery based movement and mental tasks. <em>Intl. Symposium on Translational Neuroscience and XXXIII Annual Conf., Indian Academy of Neurosciences</em>, Panjab University, Chandigarh, 31 Oct-2 Nov.</span></li>
+        <li><span class="yr">2014</span><span><strong>Bodda S</strong>, Nair B, Diwakar S. Using surface EEG to explore computer brain interactions for robotic manipulation. <em>Intl. Conf. on Recent Advances in Cognition and Health</em>, BHU, Varanasi, 19-21 Dec.</span></li>
+        <li><span class="yr">2014</span><span><strong>Bodda S</strong>, Nair B, Diwakar S. Extracting motor imagery for computer-brain interactions: using F4 F3 channels for robotic manipulation. <em>Intl. Symposium on Translational Neuroscience and XXXII Annual Conf., Indian Academy of Neurosciences</em>, NIMHANS, Bangalore, 1-3 Nov.</span></li>
+        <li><span class="yr">2014</span><span>Diwakar S, <strong>Bodda S</strong>, Nutakki C, Vijayan A, Achuthan K, Nair B. Neural control using EEG as a BCI technique for low-cost prosthetic arms. <em>6th Intl. Conf. on Neural Computation Theory and Applications (NCTA 2014)</em>, Rome, 22-24 Oct.</span></li>
+      </ol>
+    </details>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap grid">
+  <h2>Contact</h2>
+  <div>
+    <p>Amrita Mind Brain Center, Amrita Vishwa Vidyapeetham, Amritapuri, Kerala, India.</p>
+    <ul class="links">
+      <li><a href="mailto:sandeepb@am.amrita.edu">sandeepb@am.amrita.edu</a></li>
+      <li><a href="https://orcid.org/0000-0001-7256-4903">ORCID</a></li>
+      <li><a href="https://www.amrita.edu/center/mind-brain/people/sandeep-bodda/">Amrita faculty page</a></li>
+      <li><a href="https://scholar.google.com/citations?user=rCzpxLcAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://www.linkedin.com/in/sandeep-bodda-phd-b222b547">LinkedIn</a></li>
+    </ul>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">Dr. Sandeep Bodda. Hosted on GitHub Pages.</div></footer>
+
+<script>
+// Decorative EEG-like traces (sums of band-limited oscillations with a little noise)
+(function(){
+  var W=1200,H=176,N=480;
+  function seeded(s){return function(){s=(s*16807)%2147483647;return (s-1)/2147483646}}
+  function trace(id,mid,amp,seed,freqs){
+    var r=seeded(seed),ph=freqs.map(function(){return r()*6.28}),d="";
+    for(var i=0;i<=N;i++){
+      var x=i/N*W,t=i/N*14,y=0;
+      freqs.forEach(function(f,k){y+=Math.sin(t*f+ph[k])/(1+k*.6)});
+      y+=(r()-.5)*.5;
+      d+=(i?"L":"M")+x.toFixed(1)+" "+(mid+y*amp).toFixed(1);
+    }
+    document.getElementById(id).setAttribute("d",d);
+  }
+  trace("t3",50,12,7,[1.1,3.2,7.9]);
+  trace("t2",100,14,13,[1.7,4.1,9.3]);
+  trace("t1",142,13,29,[1.3,2.9,6.4]);
+  var root=document.documentElement,btn=document.getElementById("theme");
+  btn.addEventListener("click",function(){
+    var dark=root.getAttribute("data-theme")==="dark"||(!root.getAttribute("data-theme")&&matchMedia("(prefers-color-scheme:dark)").matches);
+    root.setAttribute("data-theme",dark?"light":"dark");
+  });
+})();
+</script>
+</body>
+</html>
